@@ -1,0 +1,40 @@
+@import "~bootstrap/scss/bootstrap";
+@import "./components/Notification/customStyle";
+
+$newPrimaryColor: #00d9f6;
+
+.btn-primary-new {
+    background-color: #00d9f6;
+    border-color: #00d9f6;
+    color:white;
+}
+
+.btn-primary-new:hover{
+    background-color: #27e0f8;
+    border-color: #27e0f8;
+    color:white;
+}
+
+.text-primary {
+    color: #00d9f6 !important;
+}
+
+.border-left-primary {
+    border-left: .25rem  solid #00d9f6 !important;
+ 
+}
+
+.border-left-success {
+    border-left: .25rem  solid #28a745 !important;
+}
+
+.border-left-info {
+    border-left: .25rem  solid #17a2b8 !important;
+}
+.border-left-warning {
+    border-left: .25rem  solid #ffc107 !important;
+}
+
+.text-xs {
+    font-size: .7rem;
+}

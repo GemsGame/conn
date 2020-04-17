@@ -1,0 +1,18 @@
+.badge {
+    position: relative;
+    left: -0.5em;
+    bottom: -0.5em;
+}
+.line {
+    height: 35px;
+    color:black;
+    border-right:1px solid rgba(0, 0, 0, 0.185);
+}
+
+
+.person, 
+.person:active, 
+.person:focus {
+    outline: none;
+    background: none;
+}

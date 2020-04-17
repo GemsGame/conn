@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+$backgroundColor: #00d9f6;
+$textcolor:white;
+$borderLeftColor:white;
+
+ul {
+    padding-inline-start: 0px;
+}
+.navbar-menu {
+  min-height:100vh;
+  background-color:$backgroundColor;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.15);
+  transition: all 0.5s ease;
+  
+}
+.burger{
+  display:flex;
+  justify-content: flex-end;
+}
+
+.line-burger {
+  height: 30px;
+  width: 45px;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 25px 8px 0px 0px;
+  cursor: pointer;
+}
+
+.line-burger div {
+width: 100%;
+border-bottom: 2px solid white;
+}
+.burger img {
+  padding: 25px 8px 0px 0px;
+  cursor: pointer;
+}
+.navbar__list {
+  list-style-type: none;
+  
+}
+.navbar__li {
+  display: inline-block;
+  padding:0px 0px 0px 12px;
+  position: relative;
+  top:2.5px;
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: 38px;
+  color: $textcolor;
+  font-family: "Lato";
+  font-weight: 400;
+}
+
+.navbar__logo {
+  margin-top:10px;
+  display:flex;
+  justify-content: center;
+}
+.navbar__image {
+  height: 2em;
+  display:inline;
+  color:black;
+}
+.navbar__li-box:first-child {
+  margin-top: 30px;
+  display: flex;
+    align-items: center;
+}
+.navbar__li-box {
+  height: 43px;
+  margin-top:15px;
+  display: flex;
+  align-items: center;
+}
+.navbar__li-box:hover {
+  border-left: 7px solid $borderLeftColor;
+  cursor: pointer;
+}

@@ -1,0 +1,35 @@
+$dangerColor:#f35363;
+$successColor:#43d465;
+
+.notification-item {
+  border-left: 0px;
+  border-radius: 20px;
+}
+
+.notification-success {
+    background-color: $successColor;
+  
+    .timer {
+      background-color: $successColor;
+    }
+    .timer-filler {
+      background-color: $successColor;
+    }
+    .notification-close {
+      background-color: $successColor;
+    }
+  }
+
+  .notification-danger {
+    background-color: $dangerColor;
+  
+    .timer {
+      background-color: $dangerColor;
+    }
+    .timer-filler {
+      background-color: $dangerColor;
+    }
+    .notification-close {
+      background-color: $dangerColor;
+    }
+  }
