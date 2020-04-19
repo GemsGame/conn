@@ -5,7 +5,8 @@ import {
   faPhone, faTasks, faComments, faPercent, faDollarSign,
 } from '@fortawesome/free-solid-svg-icons';
 import ShortStatisticCard from '../../components/ShortStatisticCard';
-import LineChart from '../../components/Chart';
+import LineChart from '../../components/LineChart';
+import BarChart from '../../components/BarChart/BarChart';
 
 
 const Dashboard = (props) => (
@@ -18,11 +19,7 @@ const Dashboard = (props) => (
     </div>
     <div className='row mt-4 mr-2 ml-2 mb-4'>
       <LineChart />
-      <div className="col-md-4 col-sm-12">
-        <div className="card">
-       
-        </div>
-      </div>
+      <BarChart/>
     </div>
   </>
 );

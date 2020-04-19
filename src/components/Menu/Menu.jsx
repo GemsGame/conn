@@ -16,7 +16,7 @@ const CustomNav = ({ li }) => {
   return (
     <nav className="navbar-menu" style={{ width: window === false ? 250 : 60 }}>
       <div className="burger" onClick={() => openClose()}>
-        <div className="line-burger">
+        <div className="line-burger" style={{ transform: window === false ? 'rotate(0deg)' : 'rotate(90deg)' }}>
           <div></div>
         </div>
       </div>
