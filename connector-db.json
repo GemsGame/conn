@@ -1,0 +1,57 @@
+{
+  "users" : {
+    "jluU0wR2PYP25YEM3rCf3ZFQzoJ2" : {
+      "statistic" : {
+            "projects" : {
+              "default" : {
+                "answers" : {
+                  "1587314941486" : "Chrome 13, windows 10",
+                  "1587314941484" : "Chrome 43, windows 10",
+                  "1587314941482" : "Chrome 11, windows 10",
+                  "1587314941481" : "IE 11, windows 7",
+                  "1587314941480" : "Chrome 11, windows 10",
+                  "1587314941489" : "Chrome 11, windows 10"
+                },
+                "calls" : {
+                  "1587314941486" : "Chrome 11, windows 10",
+                  "1587314941481" : "IE 11, windows 7",
+                  "1587314941480" : "Chrome 11, windows 10",
+                  "1587314941489" : "Chrome 11, windows 10"
+                }
+              },
+              "boats" : {
+                "answers" : {
+                  "1587314941486" : "Chrome 13, windows 10",
+                  "1587314941484" : "Chrome 43, windows 10"
+                },
+                "calls" : {
+                  "1587314941486" : "Chrome 11, windows 10",
+                  "1587314941484" : "Chrome 43, windows 10",
+                  "1587314941482" : "Chrome 11, windows 10",
+                  "1587314941481" : "IE 11, windows 7",
+                  "1587314941480" : "Chrome 11, windows 10",
+                  "1587314941489" : "Chrome 11, windows 10",
+                  "1587314941456" : "Chrome 11, windows 10",
+                  "1587314941414" : "Chrome 43, windows 10",
+                  "1587314941422" : "Chrome 11, windows 10",
+                  "1587314941431" : "IE 11, windows 7",
+                  "1587314941440" : "Chrome 11, windows 10",
+                  "1587314941459" : "Chrome 11, windows 10",
+                  "1587314941156" : "Chrome 11, windows 10",
+                  "1587314941514" : "Chrome 43, windows 10",
+                  "1587314941472" : "Chrome 11, windows 10",
+                  "1587314941131" : "IE 11, windows 7",
+                  "1587314941420" : "Chrome 11, windows 10",
+                  "1587314941449" : "Chrome 11, windows 10",
+                  "1587314941164" : "Chrome 43, windows 10",
+                  "1587314941252" : "Chrome 11, windows 10",
+                  "1587314941411" : "IE 11, windows 7",
+                  "1587314941400" : "Chrome 11, windows 10",
+                  "1587314941649" : "Chrome 11, windows 10"
+                }
+              }
+            }
+      }
+    }
+  }
+}
