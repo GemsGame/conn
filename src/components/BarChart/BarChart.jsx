@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Line } from 'react-chartjs-2';
-import "./_chart.scss";
+import { Bar } from 'react-chartjs-2';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faEllipsisV,
+} from '@fortawesome/free-solid-svg-icons';
 
 const options = {
   title: {
@@ -49,20 +52,24 @@ const data = {
     },
   ],
 };
-const LineChart = (props) => (
-    <div className="col-md-8 col-sm-12">
-        <div className="card">
-       
-            <div className="card-body">
-            <Line data={data} options={options}/>
-            </div>
-           </div>
-    </div>
+
+const BarChart = (props) => (
+  <div className="col-md-4 col-sm-12">
+  <div className="card">
+    <div className="card-body">
+    <div className="card-title text-right"> <FontAwesomeIcon icon = {faEllipsisV} size="lg" color="#dddfeb"/></div>
+    <Bar
+        data={data}
+        height={328}
+        options={options}
+    />
+      </div>
+  </div>
+</div>
 );
 
-LineChart.propTypes = {
-  data: PropTypes.object,
-  options: PropTypes.object,
+BarChart.propTypes = {
+
 };
 
-export default LineChart;
+export default BarChart;
