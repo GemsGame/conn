@@ -57,9 +57,6 @@ const LineChart = (props) => (
     <div className="col-md-8 col-sm-12">
         <div className="card">
             <div className="card-body">
-              <div className="card-title text-right">
-                <FontAwesomeIcon icon = {faEllipsisV} size="lg" color="#dddfeb"/>
-              </div>
             <Line data={data} options={options}/>
             </div>
            </div>

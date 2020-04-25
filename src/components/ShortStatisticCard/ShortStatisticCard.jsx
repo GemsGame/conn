@@ -3,10 +3,7 @@ import PropTypes from 'prop-types';
 import './_shortStatisticCard.scss';
 import LanguageContext from '../../multilanguage/context';
 import { languageList } from '../../multilanguage/translation';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faEllipsisH,
-} from '@fortawesome/free-solid-svg-icons';
+
 const ShortStatisticCard = (props) => {
   const {
     title, value, borderColor, textColor, icon,
@@ -36,7 +33,7 @@ const ShortStatisticCard = (props) => {
 
 ShortStatisticCard.defaultProps = {
   title: 'SHORT_STATISTIC_CARD_CALLS_TITLE',
-  value: '9',
+  value: '0',
 };
 
 ShortStatisticCard.propTypes = {
