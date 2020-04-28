@@ -38,3 +38,13 @@ $newPrimaryColor: #00d9f6;
 .text-xs {
     font-size: .7rem;
 }
+
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+  }
+  
+  div.chart-container {
+    padding: 1px;
+ }

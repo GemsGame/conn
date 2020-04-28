@@ -5,11 +5,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faEllipsisV,
 } from '@fortawesome/free-solid-svg-icons';
+import './_barChart.scss';
 
 const options = {
   title: {
     display: false,
   },
+  responsive: true,
   legend: {
     display: false,
   },
@@ -26,47 +28,45 @@ const options = {
     }],
   },
 };
-const data = {
-  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-  datasets: [
-    {
-      label: 'Calls',
-      fill: false,
-      lineTension: 0.5,
-      backgroundColor: '#00d9f6',
-      borderColor: '#00d9f6',
-      borderCapStyle: 'butt',
-      borderDash: [],
-      borderDashOffset: 0.0,
-      borderJoinStyle: 'miter',
-      pointBorderColor: '#00d9f6',
-      pointBackgroundColor: '#fff',
-      pointBorderWidth: 7,
-      pointHoverRadius: 7,
-      pointHoverBackgroundColor: '#00d9f6',
-      pointHoverBorderColor: '#00d9f6',
-      pointHoverBorderWidth: 2,
-      pointRadius: 1,
-      pointHitRadius: 10,
-      data: [65, 59, 80, 81, 56, 55, 40],
-    },
-  ],
-};
 
-const BarChart = (props) => (
-  <div className="col-md-4 col-sm-12">
+
+const BarChart = (props) => {
+  const { value } = props;
+  const data = {
+    labels: value.labels[0],
+    datasets: [
+      {
+        label: 'Answers',
+        borderWidth:2,
+        fill: false,
+        lineTension: 0.5,
+        backgroundColor: 'white',
+        borderColor: '#28a745',
+        borderCapStyle: 'butt',
+        borderDash: [],
+        borderDashOffset: 0.0,
+        borderJoinStyle: 'miter',
+        hoverBackgroundColor: '#28a745',
+        pointBorderWidth: 7,
+        pointHoverRadius: 7,
+        pointHoverBorderWidth: 2,
+        pointRadius: 1,
+        pointHitRadius: 10,
+        data: value.data[0],
+      },
+    ],
+  };
+  return <div className="col-md-6 col-sm-12 mt-1 mb-1">
   <div className="card">
     <div className="card-body">
-    
     <Bar
         data={data}
-        height={328}
         options={options}
     />
       </div>
   </div>
 </div>
-);
+};
 
 BarChart.propTypes = {
 
