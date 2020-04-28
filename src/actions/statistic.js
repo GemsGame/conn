@@ -49,3 +49,20 @@ export const getAllElements = (userId) => (dispatch) => {
     }))
     .then(() => dispatch(elementsCountSuccess(elements)));
 };
+
+
+
+export const countAnswersCalls = (userId) => (dispatch) => {
+  const elements = {};
+  fire.database().ref(`users/${userId}`).child('statistic').child('projects')
+    .once('value')
+    .then((result) => result.forEach((element) => {
+      element.forEach((v) => {
+        //if(v.key === 'calls' || v.key === "answers") {
+          
+        //}
+        elements[element.key] = { ...elements[element.key], [v.key]: v.val() };
+      });
+    }))
+    .then(() => dispatch(elementsCountSuccess(elements)));
+};

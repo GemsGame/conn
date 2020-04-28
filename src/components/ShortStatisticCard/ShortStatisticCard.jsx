@@ -11,7 +11,7 @@ const ShortStatisticCard = (props) => {
 
   return <LanguageContext.Consumer>
     {({ language }) => (
-      <div className="col-sm-12 col-md-3">
+      <div className="col-sm-12 col-md-3 mt-1 mb-1">
         <div className={`card ${borderColor}`}>
           <div className="row card-body">
             <div className="col">

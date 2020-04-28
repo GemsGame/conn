@@ -11,6 +11,7 @@ const options = {
   title: {
     display: false,
   },
+  responsive: true,
   legend: {
     display: false,
   },
@@ -27,41 +28,44 @@ const options = {
     }],
   },
 };
-const data = {
-  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-  datasets: [
-    {
-      label: 'Calls',
-      fill: false,
-      lineTension: 0.5,
-      backgroundColor: '#00d9f6',
-      borderColor: '#00d9f6',
-      borderCapStyle: 'butt',
-      borderDash: [],
-      borderDashOffset: 0.0,
-      borderJoinStyle: 'miter',
-      pointBorderColor: '#00d9f6',
-      pointBackgroundColor: '#fff',
-      pointBorderWidth: 7,
-      pointHoverRadius: 7,
-      pointHoverBackgroundColor: '#00d9f6',
-      pointHoverBorderColor: '#00d9f6',
-      pointHoverBorderWidth: 2,
-      pointRadius: 1,
-      pointHitRadius: 10,
-      data: [65, 59, 80, 81, 56, 55, 40],
-    },
-  ],
-};
-const LineChart = (props) => (
-    <div className="col-md-8 col-sm-12">
+
+const LineChart = (props) => {
+  const { value } = props;
+
+  const data = {
+    labels: value.labels[0],
+    datasets: [
+      {
+        label: 'Calls',
+        fill: false,
+        lineTension: 0.5,
+        backgroundColor: '#00d9f6',
+        borderColor: '#00d9f6',
+        borderCapStyle: 'butt',
+        borderDash: [],
+        borderDashOffset: 0.0,
+        borderJoinStyle: 'miter',
+        pointBorderColor: '#00d9f6',
+        pointBackgroundColor: '#fff',
+        pointBorderWidth: 7,
+        pointHoverRadius: 7,
+        pointHoverBackgroundColor: '#00d9f6',
+        pointHoverBorderColor: '#00d9f6',
+        pointHoverBorderWidth: 2,
+        pointRadius: 1,
+        pointHitRadius: 10,
+        data: value.data[0],
+      },
+    ],
+  };
+    return <div className="col-md-6 col-sm-12 mt-1 mb-1">
         <div className="card">
             <div className="card-body">
             <Line data={data} options={options}/>
             </div>
            </div>
     </div>
-);
+};
 
 LineChart.propTypes = {
   data: PropTypes.object,
