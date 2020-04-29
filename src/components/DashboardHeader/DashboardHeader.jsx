@@ -59,9 +59,19 @@ const DashboardHeader = (props) => {
       labels: [],
       data: [],
     };
+    const ob = {};
     if (Object.keys(statistic).length > 0) {
       if (sel === 'all') {
-        //Object.keys(statistic).map((item) => statistic[item]._time_[prop]).map((item => Object.keys(item).map((i, index, arr) => result[i] = item[i] + result[i])));
+        Object.keys(statistic).map((item) => Object.keys(statistic[item][`_time_${prop}`]).map(i => {
+          if (ob[i]) {
+            ob[i] += statistic[item][`_time_${prop}`][i];
+          } else {
+            ob[i] = statistic[item][`_time_${prop}`][i];
+          }
+        }));
+
+        result.labels.push(Object.keys(ob));
+        result.data.push(Object.keys(ob).map(i => ob[i]));
       } else {
         result.labels.push(Object.keys(statistic[sel][`_time_${prop}`]));
         result.data.push(Object.keys(statistic[sel][`_time_${prop}`]).map(item => statistic[sel][`_time_${prop}`][item]));
@@ -69,7 +79,6 @@ const DashboardHeader = (props) => {
     }
     return result;
   };
-  
   return <>
     <ElipsisMenu statistic={statistic} select={selectProject} />
     <div className='row mt-3 mr-2 ml-2'>
@@ -78,7 +87,7 @@ const DashboardHeader = (props) => {
       <ShortStatisticCard title="SHORT_STATISTIC_CARD_CR_TITLE" value={conversion(select).toFixed(2)} borderColor="border-left-warning" textColor="text-warning" icon={<FontAwesomeIcon icon={faPercent} size="2x" color="#dddfeb" />} />
       <ShortStatisticCard title="SHORT_STATISTIC_CARD_CPL_TITLE" value={cost(0.001, select).toFixed(5)} borderColor="border-left-info" textColor="text-info" icon={<FontAwesomeIcon icon={faDollarSign} size="2x" color="#dddfeb" />} />
     </div>
-    <div className='row mt-3 mr-2 ml-2'>
+    <div className='row mt-5 mr-2 ml-2'>
       <LineChart value={chartData(select, 'calls')} />
       <BarChart value={chartData(select, 'answers')} />
     </div>
@@ -103,3 +112,4 @@ const mapDispatchToProps = {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(DashboardHeader);
+

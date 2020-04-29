@@ -33,7 +33,7 @@ class ElipsisMenu extends React.Component {
     render() {
         const { statistic, select } = this.props;
         let projectsList = Object.keys(statistic).map((item, index) =>
-            <li key={index} className="list-group-item li-item" onClick={() => select(item)}><div className="ml-5 mr-4">  <FontAwesomeIcon icon={faProjectDiagram} size="sm" height="300" className="dropdown-button-pointer mr-2" color="#dddfeb" />{item}</div></li>
+            <div key={index} className="list-item padding0rem hov" onClick={() => select(item)}><div className="fa-image"><FontAwesomeIcon icon={faProjectDiagram} size="sm" height="300" className="dropdown-button-pointer" color="#dddfeb" /></div>{statistic[item].name}</div>
         )
         let style = 'hidden';
         if (this.state.visible) {
@@ -47,16 +47,17 @@ class ElipsisMenu extends React.Component {
                     </div>
                 </div>
                 <div className={`card dropdown-menu ${style}`}>
-                    <div className="card-body padding-05">
+                    <div className="card-body padding0">
                         <p className="card-title header text-center">Statistics:</p>
-                        <ul className="list-group">
-                            <li className="list-group-item li-item"><div className="ml-3 mr-4" onClick={() => select('all')}>  <FontAwesomeIcon icon={faListUl} size="sm" height="300" className="dropdown-button-pointer mr-2" color="#dddfeb" />All</div></li>
-                            <li className="list-group-item li-header"><div className="ml-3 mr-4">  <FontAwesomeIcon icon={faThumbtack} size="sm" height="300" className="dropdown-button-pointer mr-2" color="#dddfeb" />Your projects</div>
-                                <ul className="list-group">
-                                    {projectsList}
-                                </ul>
-                            </li>
-                        </ul>
+                        <div className="list-group">
+                            <div className="list-header pointer hov padding1rem" onClick={() => select('all')}>  <div className="fa-image"><FontAwesomeIcon icon={faListUl} size="sm" height="300" className="dropdown-button-pointer" color="#dddfeb" /></div>All projects</div>
+                            <div className="list-header padding1rem">  <div className="fa-image"><FontAwesomeIcon icon={faThumbtack} size="sm" height="300" className="dropdown-button-pointer" color="#dddfeb" /> </div>
+                            Your projects
+                                   
+                              
+                            </div>
+                            {projectsList}
+                        </div>
                     </div>
                 </div>
             </div>
