@@ -4,6 +4,8 @@ export default function authentication(state = [], action) {
       return action.payload;
     case 'LOGIN_ERROR':
       return state;
+    case 'OUT_SUCCESS':
+      return [];
     default:
       return state;
   }

@@ -11,8 +11,7 @@ const Registration = () => (
             </div>
         </div>
         <div className="row">
-            <div className="col mx-auto my-auto">
-                <RegistrationForm />
+            <div className="col mx-auto my-auto">  
             </div>
         </div>
     </div>

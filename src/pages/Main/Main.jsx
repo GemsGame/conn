@@ -14,15 +14,14 @@ const Main = () => <div className="container-fluid">
 
             <Menu
                 li={[
-                  ['Dashboard', <FontAwesomeIcon icon={faChartLine} size="lg" color="white" />, '/dashboard'],
-                  ['Projects', <FontAwesomeIcon icon={faTasks} size="lg" color="white" />, '/dashboard/projects'],
-                  ['Calls records', <FontAwesomeIcon icon={faServer} size="lg" color="white" />, '/dashboard/records'],
-                  ['Constructor', <FontAwesomeIcon icon={faWrench} size="lg" color="white" />, '/'],
-                  ['Connections', <FontAwesomeIcon icon={faCoins} size="lg" color="white" />, '/'],
-                  ['Support', <FontAwesomeIcon icon={faQuestionCircle} size="lg" color="white" />, '/'],
+                  ['Cтатистика', <FontAwesomeIcon icon={faChartLine} size="lg" color="white" />, '/dashboard'],
+                  ['Проекты', <FontAwesomeIcon icon={faTasks} size="lg" color="white" />, '/dashboard/projects'],
+                  ['Записи звонков', <FontAwesomeIcon icon={faServer} size="lg" color="white" />, '/dashboard/records'],
+                  ['Конструктор', <FontAwesomeIcon icon={faWrench} size="lg" color="white" />, '/'],
+                  ['Баланс CONN', <FontAwesomeIcon icon={faCoins} size="lg" color="white" />, '/'],
+                  ['Справка', <FontAwesomeIcon icon={faQuestionCircle} size="lg" color="white" />, '/'],
                 ]}
             />
-          
          <div className="col">
             <Navbar />
             <Switch>

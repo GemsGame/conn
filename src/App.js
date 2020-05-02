@@ -23,7 +23,7 @@ import Main from './pages/Main';
 
 
 function App() {
-  const [language, setLanguage] = useState(localStorageGet('language') ? localStorageGet('language') : 'ENG');
+  const [language, setLanguage] = useState(localStorageGet('language') ? localStorageGet('language') : 'RU');
   const updateLanguage = (e) => {
     setLanguage(e.target.value);
     localStorageSet('language', e.target.value);

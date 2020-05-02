@@ -1,6 +1,7 @@
 import { store } from 'react-notifications-component';
 import fire from '../config/firebase';
-import { localStorageSet } from '../services/localStorage';
+import { localStorageSet, localStorageDel } from '../services/localStorage';
+
 export const authSuccess = (response) => ({
   type: 'LOGIN_SUCCESS',
   payload: response,
@@ -11,12 +12,23 @@ export const authError = (error) => ({
   payload: error,
 });
 
+export const outSuccess = () => ({
+  type: 'OUT_SUCCESS',
+  payload: {},
+});
+
+export const out = () => (dispatch) => {
+  console.log('out');
+  localStorageDel('authentication');
+  dispatch(outSuccess());
+};
+
 export const auth = (email, password) => (dispatch) => {
   fire.auth().signInWithEmailAndPassword(email, password)
     .then((response) => {
       store.addNotification({
-        title: 'Login success!',
-        message: `Your email: ${response.user.email}`,
+        title: 'Успешный вход!',
+        message: `Ваш логин: ${response.user.email}`,
         type: 'success',
         insert: 'top',
         container: 'bottom-center',

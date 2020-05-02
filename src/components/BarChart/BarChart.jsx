@@ -1,10 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Bar } from 'react-chartjs-2';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faEllipsisV,
-} from '@fortawesome/free-solid-svg-icons';
+
 import './_barChart.scss';
 
 const options = {
@@ -36,8 +32,8 @@ const BarChart = (props) => {
     labels: value.labels[0],
     datasets: [
       {
-        label: 'Answers',
-        borderWidth:2,
+        label: 'Ответы',
+        borderWidth: 2,
         fill: false,
         lineTension: 0.5,
         backgroundColor: 'white',
@@ -56,7 +52,7 @@ const BarChart = (props) => {
       },
     ],
   };
-  return <div className="col-md-6 col-sm-12 mt-1 mb-1">
+  return (<div className="col-md-6 col-sm-12 mt-1 mb-1">
   <div className="card">
     <div className="card-body">
     <Bar
@@ -65,7 +61,7 @@ const BarChart = (props) => {
     />
       </div>
   </div>
-</div>
+</div>);
 };
 
 BarChart.propTypes = {

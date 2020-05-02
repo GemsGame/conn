@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faEllipsisV,
 } from '@fortawesome/free-solid-svg-icons';
+import Dropdown from '../Dropdown';
 
 const options = {
   title: {
@@ -36,7 +37,7 @@ const LineChart = (props) => {
     labels: value.labels[0],
     datasets: [
       {
-        label: 'Calls',
+        label: 'Звонки',
         fill: false,
         lineTension: 0.5,
         backgroundColor: '#00d9f6',

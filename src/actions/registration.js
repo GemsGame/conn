@@ -16,8 +16,8 @@ export const regist = (email, password) => (dispatch) => {
   fire.auth().createUserWithEmailAndPassword(email, password)
     .then((response) => {
       store.addNotification({
-        title: 'Registration success!',
-        message: `Your email: ${response.user.email}`,
+        title: 'Успешная регистрация!',
+        message: `Ваш email: ${response.user.email}`,
         type: 'success',
         insert: 'top',
         container: 'bottom-center',

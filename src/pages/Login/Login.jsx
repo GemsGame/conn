@@ -7,7 +7,7 @@ const Login = () => (
     <div className="container-fluid vh-100">
         <div className="row language justify-content-end">
             <div className="col text-right col-1 mt-2">
-               <SelectLanguage/>
+           
             </div>
         </div>
         <div className="row">

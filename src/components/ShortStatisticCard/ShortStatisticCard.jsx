@@ -33,12 +33,12 @@ const ShortStatisticCard = (props) => {
 
 ShortStatisticCard.defaultProps = {
   title: 'SHORT_STATISTIC_CARD_CALLS_TITLE',
-  value: '0',
+  value:0,
 };
 
 ShortStatisticCard.propTypes = {
   title: PropTypes.string,
-  value: PropTypes.string,
+
 };
 
 export default ShortStatisticCard;

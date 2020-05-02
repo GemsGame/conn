@@ -3,8 +3,8 @@ export const localStorageSet = (key, state) => {
   localStorage.setItem(key, jSONstate);
 };
 
-export const localStorageDel = (state) => {
-  localStorage.removeItem();
+export const localStorageDel = (key) => {
+  localStorage.removeItem(key);
 };
 
 export const localStorageGet = (key) => JSON.parse(localStorage.getItem(key));

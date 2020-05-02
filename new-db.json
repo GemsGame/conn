@@ -1,6 +1,35 @@
 {
   "users" : {
     "jluU0wR2PYP25YEM3rCf3ZFQzoJ2" : {
+      "projects": {
+        "_":"0"
+      },
+      "calls": {
+        "_":"0"
+      },
+      "constructor":{
+        "_":"0"
+      },
+      "support":{
+        "_":"0"
+      },
+      "messages": {
+         "1588356015": {"text":"Your buy 1000 connections", "viewed":false},
+         "1588316012": {"text":"Warning connections out", "viewed":false},
+         "1588354015": {"text":"Your get free 1000 connections","viewed":false},
+         "1588326015": {"text":"Thank's for registration in Connector","viewed":false}
+      },
+      "balance": {
+       "connections":973,
+       "payments_history": {
+         "hashhashahashaXLXL": {
+           "time":1588120116,
+           "connections_count":10000,
+           "currency":"$",
+           "payment_count":10
+         }
+       }
+      },
       "statistic" : {
             "projects" : {
               "wR2PYP25YEM3rCf3ZFQzoJ2" : {

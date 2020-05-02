@@ -1,20 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import DashboardHeader from '../../components/DashboardHeader';
+import DashboardContainer from '../../components/DashboardContainer';
 
-
-const Dashboard = () => {
-
-
-  return (<>
-       <DashboardHeader />
-  </>);
-};
-
-Dashboard.propTypes = {
-};
-
-
+const Dashboard = () => (
+  <DashboardContainer/>
+);
 export default Dashboard;
-/* <LineChart />
-      <BarChart />*/
