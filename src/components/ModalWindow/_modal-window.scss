@@ -11,10 +11,23 @@
     align-items: center;
    
 }
-
+.display-none {
+    display: none;
+}
 .modal-window {
     animation: bounce-bounce 1s ease-out;
-    width: 100%;
+    width: 50%;
+    min-width: 200px;
+}
+.modal-close-button {
+    text-align: end;
+    transform: translateX(20px);
+  
+}
+.modal-close-button i {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
 }
 
 @keyframes bounce-bounce {
@@ -25,7 +38,7 @@
     }
 
     20% {
-        transform: scale3d(1.1, 1.1, 1.1);
+        transform: scale3d(1, 1, 1);
     }
 
     40% {

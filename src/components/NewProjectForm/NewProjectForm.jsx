@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const NewProjectForm = (props) => (
-    <form className="col-sm-12 col-md-6 col-lg-6 mx-auto">
+  <div className="row">
+    <form className="col mx-auto">
     <div className="card">
         <div className="card-body">
     <div class="form-group">
@@ -40,12 +41,11 @@ const NewProjectForm = (props) => (
       <input type="checkbox" class="form-check-input" id="exampleCheck1" />
       <label class="form-check-label" for="exampleCheck1">Check me out</label>
     </div>
-    
     <button type="submit" class="btn btn-primary">Submit</button>
     </div>
     </div>
   </form>
-  
+  </div>
 );
 
 NewProjectForm.propTypes = {
