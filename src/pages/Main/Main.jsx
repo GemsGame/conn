@@ -8,10 +8,11 @@ import {
 import Menu from '../../components/Menu';
 import Navbar from '../../components/Navbar';
 import Dashboard from '../Dashboard/Dashboard';
+import Projects from '../Projects';
+
 
 const Main = () => <div className="container-fluid">
     <div className="row">
-
             <Menu
                 li={[
                   ['Cтатистика', <FontAwesomeIcon icon={faChartLine} size="lg" color="white" />, '/dashboard'],
@@ -26,7 +27,7 @@ const Main = () => <div className="container-fluid">
             <Navbar />
             <Switch>
                 <Route exact path="/dashboard" component={Dashboard} />
-                <Route path="/dashboard/projects" component={Navbar} />
+                <Route path="/dashboard/projects" component={Projects} />
                 <Route path="/dashboard/records" component={Navbar} />
             </Switch>
             </div>

@@ -83,7 +83,7 @@ const DashboardContainer = (props) => {
     return result;
   };
   return <>
- <div className="row justify-content-end mr-4 mt-2">
+ <div className="row justify-content-end mr-4 mt-3">
       <div className='block'>
         <Dropdown
           statistic={statistic}
@@ -101,7 +101,7 @@ const DashboardContainer = (props) => {
       <ShortStatisticCard title="SHORT_STATISTIC_CARD_CR_TITLE" value={conversion(select).toFixed(2)} borderColor="border-left-warning" textColor="text-warning" icon={<FontAwesomeIcon icon={faPercent} size="2x" color="#dddfeb" />} />
       <ShortStatisticCard title="SHORT_STATISTIC_CARD_CPL_TITLE" value={cost(0.001, select).toFixed(5)} borderColor="border-left-info" textColor="text-info" icon={<FontAwesomeIcon icon={faDollarSign} size="2x" color="#dddfeb" />} />
     </div>
-    <div className='row mt-5 mr-2 ml-2'>
+    <div className='row mt-1 mr-2 ml-2'>
       <LineChart value={chartData(select, 'calls')} />
       <BarChart value={chartData(select, 'answers')} />
     </div>
