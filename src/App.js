@@ -3,6 +3,7 @@ import 'react-notifications-component/dist/theme.css';
 import 'animate.css';
 import './App.scss';
 
+
 import { Provider } from 'react-redux';
 import ReactNotification from 'react-notifications-component';
 

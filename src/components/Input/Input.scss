@@ -1,0 +1,11 @@
+$errColor:#dc3545;
+.input-wrapper {
+    margin-bottom: 1rem;
+}
+.error-text {
+    color: $errColor; 
+}
+.error-border{
+    border-color: $errColor;
+}
+
