@@ -12,9 +12,6 @@ const ModalWindow = (props) => {
         <div className={`modal-window-wrapper ${style}`}>
             <div className="modal-window">
                 <div className="modal-window__body">
-                    <div className="modal-close-button" onClick={closeW}>
-                        <i class="fas fa-times fa-lg" style={{ color: 'white' }}></i>
-                    </div>
                     {props.children}
                 </div>
 

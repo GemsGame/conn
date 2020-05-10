@@ -83,7 +83,8 @@ const DashboardContainer = (props) => {
     return result;
   };
   return <>
- <div className="row justify-content-end mr-4 mt-3">
+ <div className="row justify-content-end mr-4 mt-4">
+  <div className="col ml-4"><h4>Статистика</h4></div>
       <div className='block'>
         <Dropdown
           statistic={statistic}

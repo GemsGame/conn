@@ -1,6 +1,6 @@
 $dangerColor:#f35363;
 $successColor:#43d465;
-
+$warningColor: #ffc107;
 .notification-item {
   border-left: 0px;
   border-radius: 20px;
@@ -32,4 +32,20 @@ $successColor:#43d465;
     .notification-close {
       background-color: $dangerColor;
     }
+  }
+  .notification-warning {
+    background-color: $warningColor;
+    .timer {
+      background-color: $warningColor;
+    }
+    .timer-filler {
+      background-color: $warningColor;
+    }
+    .notification-close {
+      background-color: $warningColor;
+    }
+    
+  }
+  .notification-title, .notification-message {
+    text-align: center;
   }

@@ -25,8 +25,8 @@ const CustomNav = ({ li }) => {
       </div>
       <ul className="navbar__list">
         {li.map((item, i) => (
-          <div className="navbar__li-box" key={i}>
-              <Link to={item[2]}>
+          <Link to={item[2]} key={i}>
+          <div className="navbar__li-box">
             <div className="navbar__image" style={{ paddingLeft: window === false ? 60 : 17 }}>{item[1]}</div>
             <li
               className="navbar__li"
@@ -34,8 +34,8 @@ const CustomNav = ({ li }) => {
             >
               {item[0]}
             </li>
-            </Link>
           </div>
+          </Link>
         ))}
       </ul>
     </nav>
@@ -43,10 +43,3 @@ const CustomNav = ({ li }) => {
 };
 
 export default CustomNav;
-
-/*    <img
-              src={item[1]}
-              alt={item[1]}
-              style={{ paddingLeft: window === false ? 27 : 12 }}
-              className="navbar__image"
-            /> */

@@ -1,7 +1,8 @@
 .modal-window-wrapper {
     background-color: rgba(0, 0, 0, 0.836);
-    position: absolute;
+    position: fixed;
      min-height: 100vh;
+     height: 100%;
     width: 100%;
     left:0;
     top:0;
@@ -9,6 +10,7 @@
     justify-content: center;
     display: flex;
     align-items: center;
+    overflow-x: hidden;
    
 }
 .display-none {
@@ -16,19 +18,22 @@
 }
 .modal-window {
     animation: bounce-bounce 1s ease-out;
-    width: 50%;
-    min-width: 200px;
+    width: 100%;
+}
+.modal-window__body {
+    padding: 1rem;
 }
 .modal-close-button {
     text-align: end;
-    transform: translateX(20px);
+    position: relative;
+    top: 40px;
+    left: -20px;
+    z-index: 1;
+
   
 }
-.modal-close-button i {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-}
+
+
 
 @keyframes bounce-bounce {
    

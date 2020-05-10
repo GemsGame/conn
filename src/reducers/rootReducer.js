@@ -4,6 +4,7 @@ import registration from './registration';
 import statistic from './statistic';
 import balance from './balance';
 import messages from './messages';
+import projects from './projects';
 
 const rootReducer = combineReducers({
   authentication,
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   statistic,
   balance,
   messages,
+  projects,
 });
 
 export default rootReducer;
