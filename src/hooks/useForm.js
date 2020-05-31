@@ -16,7 +16,9 @@ const useForm = (callback, validate) => {
   const handleChange = (e) => {
     setValue({ ...value, [e.target.id]: e.target.value });
   };
-
+  const setV = (object) => {
+    setValue(object);
+  };
   useEffect(() => {
     if (Object.keys(errors).length === 0 && sumbitting === true) {
       callback();
@@ -26,6 +28,7 @@ const useForm = (callback, validate) => {
   return {
     handleChange,
     handleSubmit,
+    setV,
     value,
     errors,
   };

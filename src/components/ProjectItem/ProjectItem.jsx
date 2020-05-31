@@ -6,6 +6,7 @@ import Portal from '../Portal';
 import ModalWindow from '../ModalWindow';
 import useModal from '../../hooks/useModal';
 import DeleteProject from '../DeleteProject';
+import EditProject from '../EditProject';
 
 
 const code = `<!---- connector.pw технология прямого соединения---->
@@ -47,41 +48,50 @@ const ProjectItem = ({ item, hash, uid }) => {
     count, projectName, template, timer, website,
   } = item._values;
   return (
-  <>
-  <Portal>
-  <ModalWindow
-    isOpen={isOpen}
-    closeW={close()}
-    openW={open()}>
- <DeleteProject close={close()} hash={hash} uid={uid}/>
-  </ModalWindow>
-</Portal>
-  <div className="col-sm-12 col-md-6 col-lg-4 pb-5">
-    <div className="card">
-      <div className="row"></div>
-      <div class="card-header backgound-white">
-        <div className="row">
-          <div className="col"><h6>{projectName}</h6></div>
-          <Button className="btn mr-3 btn-sm trash" onClick={open()}> <i class="far fa-trash-alt"></i></Button>
-        </div>
-      </div>
-      <div className="card-body lines">
-        <div className="card-body__items">
-          <div className="row">
-            <div className="col padding1rem"><i class="fas fa-link image-list-items"></i> {shortText(website, 15)}</div>
-            <div className="col padding1rem"><i class="fas fa-stream image-list-items"></i>{template}</div>
-            <div className="col padding1rem"><i class="far fa-clock image-list-items"></i> {timer}</div>
-            <div className="col padding1rem"><i class="far fa-eye image-list-items"></i>{count}</div>
+    <>
+      <Portal>
+        <ModalWindow
+          isOpen={isOpen.deleteProject}
+          closeW={close('deleteProject')}
+          openW={open('deleteProject')}>
+          <DeleteProject close={close('deleteProject')} hash={hash} uid={uid} />
+        </ModalWindow>
+      </Portal>
+      <Portal>
+        <ModalWindow
+          isOpen={isOpen.editProject}
+          closeW={close('editProject')}
+          openW={open('editProject')}>
+          <EditProject close={close('editProject')} hash={hash} uid={uid} item={item._values} />
+        </ModalWindow>
+      </Portal>
+
+      <div className="col-sm-12 col-md-6 col-lg-4 pb-5">
+        <div className="card">
+          <div className="row"></div>
+          <div className="card-header backgound-white">
+            <div className="row">
+              <div className="col"><h6>{projectName}</h6></div>
+              <Button className="btn mr-3 btn-sm trash" onClick={open('deleteProject')}> <i className="far fa-trash-alt"></i></Button>
+            </div>
+          </div>
+          <div className="card-body lines">
+            <div className="card-body__items">
+              <div className="row">
+                <div className="col padding1rem"><i className="fas fa-link image-list-items"></i> {shortText(website, 15)}</div>
+                <div className="col padding1rem"><i className="fas fa-stream image-list-items"></i>{template}</div>
+                <div className="col padding1rem"><i className="far fa-clock image-list-items"></i> {timer}</div>
+                <div className="col padding1rem"><i className="far fa-eye image-list-items"></i>{count}</div>
+              </div>
+            </div>
+            <div className='code'>{code}</div>
+          </div>
+          <div className="button-block">
+         <Button className="mr-3 mt-1 btn btn-outline-primary-new btn-sm" onClick={open('editProject')}> <i className="fas fa-cogs button-image"></i>Настройки</Button><Button className="btn mt-1 btn-primary-new btn-sm"><i className="fas fa-code button-image"></i>Копировать код</Button>
           </div>
         </div>
-        <div className='code'>{code}</div>
       </div>
-      <div className="row mb-2 mt-1">
-        <div className="col text-center"><Button className="mr-3 mt-1 btn btn-outline-primary-new btn-sm"> <i class="fas fa-cogs button-image"></i>Настройки</Button><Button className="btn mt-1 btn-primary-new btn-sm"><i className="fas fa-code button-image"></i>Копировать код</Button></div>
-      </div>
-    </div>
-  </div>
-  </>);
+    </>);
 };
 
 ProjectItem.propTypes = {

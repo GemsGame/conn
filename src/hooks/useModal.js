@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
 const useModal = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const open = () => () => {
-    setIsOpen(true);
+  const [isOpen, setIsOpen] = useState(
+    { addProject: false, editProject: false, deleteProject: false });
+  const open = (name) => () => {
+    setIsOpen({ ...isOpen, [name]: true });
   };
-  const close = () => () => {
-    setIsOpen(false);
+  const close = (name) => () => {
+    setIsOpen({ ...isOpen, [name]: false });
   };
 
   return {

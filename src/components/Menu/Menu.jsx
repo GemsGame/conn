@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './_menu.scss';
+
 import { Link } from 'react-router-dom';
 
 

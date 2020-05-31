@@ -5,9 +5,12 @@ const projects = (state = [], action) => {
     case 'ADD_PROJECT_ERROR':
       return state;
     case 'GET_PROJECTS_SUCCESS':
-      return action.payload;
+      if (action.payload === null) {
+        return false;
+      } return action.payload;
+
     case 'GET_PROJECTS_ERROR':
-        return action.payload;
+      return action.payload;
     default:
       return state;
   }

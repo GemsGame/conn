@@ -14,7 +14,3 @@ Projects.propTypes = {
 };
 
 export default Projects;
-
-        /* <ModalWindow>
-               <ProjectsForm/>
-            </ModalWindow> */

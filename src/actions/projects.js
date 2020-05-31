@@ -25,7 +25,15 @@ const getProjectsError = (result) => ({
   type: 'GET_PROJECTS_ERROR',
   payload: result,
 });
+const editProjectSuccess = (result) => ({
+  type: 'EDIT_PROJECT_SUCCESS',
+  payload: result,
+});
 
+const editProjectError = (result) => ({
+  type: 'EDIT_PROJECT_ERROR',
+  payload: result,
+});
 export const addProject = (userId, object) => (dispatch) => {
   fire.database().ref(`users/${userId}`).child('projects').push(object, () => {
     dispatch(addProjectSuccess('push new project'));
@@ -52,6 +60,29 @@ export const getProjects = (userId) => (dispatch) => {
     .then((snapshot) => snapshot.val())
     .then((result) => dispatch(getProjectsSuccess(result)))
     .catch((error) => dispatch(getProjectsError(error)));
+};
+
+export const editProject = (userId, hash, obj) => (dispatch) => {
+  fire.database().ref(`users/${userId}`).child(`projects/${hash}`).child('_values')
+    .update(obj)
+    .then((result) => {
+      store.addNotification({
+        title: 'Проект изменен',
+        message: 'Замените код на сайте на актуальный',
+        type: 'success',
+        insert: 'top',
+        container: 'bottom-center',
+        animationIn: ['animated', 'fadeIn'],
+        animationOut: ['animated', 'fadeOut'],
+        dismiss: {
+          duration: 8000,
+          showIcon: true,
+        },
+      });
+
+      dispatch(editProjectSuccess(result));
+    })
+    .catch((error) => dispatch(editProjectError(error)));
 };
 
 export const deleteProject = (userId, hash) => (dispatch) => {

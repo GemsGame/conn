@@ -33,9 +33,11 @@ const DeleteProject = (props) => {
 DeleteProject.propTypes = {
 
 };
+const mapStateToProps = state => ({
 
+});
 const mapDispatchToProps = {
   deleteProject,
   getProjects,
 };
-export default connect(() => {}, mapDispatchToProps)(DeleteProject);
+export default connect(mapStateToProps, mapDispatchToProps)(DeleteProject);

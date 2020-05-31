@@ -9,6 +9,7 @@ import Menu from '../../components/Menu';
 import Navbar from '../../components/Navbar';
 import Dashboard from '../Dashboard/Dashboard';
 import Projects from '../Projects';
+import Records from '../Records';
 
 
 const Main = () => <div className="container-fluid">
@@ -28,7 +29,7 @@ const Main = () => <div className="container-fluid">
             <Switch>
                 <Route exact path="/dashboard" component={Dashboard} />
                 <Route path="/dashboard/projects" component={Projects} />
-                <Route path="/dashboard/records" component={Navbar} />
+                <Route path="/dashboard/records" component={Records} />
             </Switch>
             </div>
     </div>

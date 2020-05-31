@@ -4,7 +4,8 @@ import './_messages.scss';
 
 class Messages extends React.Component {
     state = {
-        visible: false
+        visible: false,
+        _isMounted:false,
     };
     closeW = () => {
         this.setState(() => {
@@ -13,16 +14,30 @@ class Messages extends React.Component {
     };
 
     listenEvent = (event) => {
+     
         if (event.target.id !== "button") {
             this.closeW();
         }
     }
 
     componentDidMount() {
-        document.addEventListener('click', e => this.listenEvent(e));
+        this._isMounted = true;
+        document.addEventListener('click', e => {
+            if(this._isMounted) {
+               return this.listenEvent(e);
+            }
+       
+            
+        });
+      
     }
     componentWillUnmount() {
-        document.removeEventListener('click', e => this.listenEvent(e));
+        this._isMounted = false;
+        document.removeEventListener('click', e => 
+            
+          this.listenEvent(e)
+            
+        );
     }
 
     openClose = () => {

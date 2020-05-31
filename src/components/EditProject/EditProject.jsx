@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Button from '../Button';
@@ -6,29 +6,30 @@ import Input from '../Input/Input';
 import Select from '../Select/Select';
 import useForm from '../../hooks/useForm';
 import validate from '../../services/validate';
-import { addProject, getProjects } from '../../actions/projects';
-import './_new-project-form.scss';
+import { getProjects, editProject } from '../../actions/projects';
 
-const NewProjectForm = ({ addProject: addProj, closeW, authentication, getProjects:getProj }) => {
+const EditProject = ({close, hash, authentication, getProjects:getProj, item, editProject: editProj }) => {
+
   const {
-    handleChange, handleSubmit, value, errors,
+    handleChange, handleSubmit, value, errors, setV,
   } = useForm(submit, validate);
+  
+  useEffect(() => {
+    setV(item);
+  }, []);
 
   function submit() {
-    addProj(authentication.user.uid, { _values: value });
+    editProj(authentication.user.uid, hash, value);
     getProj(authentication.user.uid);
-    closeW();
+    close();
   }
   return <div className="row w50">
-   
     <div className="col mx-auto">
       <div className="card">
         <div className="row justify-content-end">
-          <div className="col-auto"><Button onClick={closeW} className="btn btn-sm close-button"><i className="fas fa-times fa-lg"></i></Button></div>
+          <div className="col-auto"><Button onClick={close} className="btn btn-sm close-button"><i className="fas fa-times fa-lg"></i></Button></div>
         </div>
-
         <form className="card-body pt-0" onSubmit={handleSubmit} noValidate>
-  
           <Input
             id="projectName"
             type="text"
@@ -91,9 +92,6 @@ const NewProjectForm = ({ addProject: addProj, closeW, authentication, getProjec
   </div>;
 };
 
-NewProjectForm.propTypes = {
-
-};
 
 const mapStateToProps = (state) => ({
   projects: state.projects,
@@ -101,8 +99,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = {
-  addProject,
   getProjects,
+  editProject,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(NewProjectForm);
+export default connect(mapStateToProps, mapDispatchToProps)(EditProject);

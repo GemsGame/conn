@@ -1,19 +1,15 @@
 @import "~bootstrap/scss/bootstrap";
-@import "./components/Notification/customStyle";
+@import "../components/Notification/customStyle";
+@import './_values';
+@import "../components/Menu/_menu";
+@import "./_btn";
 
-$newPrimaryColor: #00d9f6;
+$newPrimaryColor: $second-color;
 
-.btn-primary-new {
-    background-color: #00d9f6;
-    border-color: #00d9f6;
-    color:white;
+body {
+    background-color:#F8F8F8;
 }
 
-.btn-primary-new:hover{
-    background-color: #27e0f8;
-    border-color: #27e0f8;
-    color:white;
-}
 
 .text-primary {
     color: #00d9f6 !important;

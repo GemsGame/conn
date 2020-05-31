@@ -1,11 +1,11 @@
 import React from 'react';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './_dropdown.scss';
 
 class Dropdown extends React.Component {
     state = {
-        visible: false
+        visible: false,
+        _isMounted:false,
     };
     closeW = () => {
         this.setState(() => {
@@ -19,22 +19,36 @@ class Dropdown extends React.Component {
         }
     }
     componentDidMount() {
-        document.addEventListener('click', e => this.listenEvent(e));
+        this._isMounted = true;
+        document.addEventListener('click', e => {
+            if(this._isMounted) {
+               return this.listenEvent(e);
+            }
+       
+            
+        });
+      
     }
     componentWillUnmount() {
-        document.removeEventListener('click', e => this.listenEvent(e));
+        this._isMounted = false;
+        document.removeEventListener('click', e => 
+            
+          this.listenEvent(e)
+            
+        );
     }
 
     openClose = () => {
-        console.log(this.state);
+  
         this.setState(() => {
             return { visible: !this.state.visible };
         });
     };
 
     render() {
-        const { statistic, select, buttonText,  buttonSize, list, button, title, icons, header, span } = this.props;
-        console.log(span);
+        const {  
+            projects, select, buttonText,  buttonSize, list, button, title, icons, header, span } = this.props;
+       
         let style = "hidden";
         if (this.state.visible) {
             style = "animated bounceIn";
@@ -59,8 +73,8 @@ class Dropdown extends React.Component {
                 </div>
             })
         }
-        if (statistic) {
-            itemsList = Object.keys(statistic).map((item, index) => {
+        if (projects) {
+            itemsList = Object.keys(projects).map((item, index) => {
                 return <div key={index} className="dropdown-list__item" onClick={() => select(item)}>
                     <div className="dropdown-list__image">
                         <FontAwesomeIcon
@@ -68,18 +82,18 @@ class Dropdown extends React.Component {
                            
                         />
                     </div>
-                    <div className="dropdown-list__item-name">{statistic[item].name}</div>
+                    <div className="dropdown-list__item-name">{projects[item]['_values'].projectName}</div>
                 </div>
             })
 
             head = <div className="dropdown-list">
-                <div className="dropdown-list__item">
+                <div className="dropdown-list__item" onClick={() => select('all')}>
                     <div className="dropdown-list__image">
                         <FontAwesomeIcon
                             icon={header.icon}
                         />
                     </div>
-                    <div className="dropdown-list__item-name" onClick={() => select('all')}>{header.name}</div>
+                    <div className="dropdown-list__item-name" >{header.name}</div>
                 </div>
             </div>
         }

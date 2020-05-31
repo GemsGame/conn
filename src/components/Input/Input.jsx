@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import './Input.scss';
 
 const Input = ({
-  className, classNameLabel, classNameError, classNameWrapper, id, error, label, ...props
+  className, classNameLabel, classNameError, classnamewrapper, id, error, label, ...props
 }) => {
 
   if(error) {
     className += ' error-border';
   }
-return <div className={classNameWrapper}>
+return <div className={classnamewrapper}>
             {label
                 && <label className={classNameLabel} htmlFor={id}>{label}</label>
             }

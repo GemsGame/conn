@@ -9,7 +9,8 @@ import ShortStatisticCard from '../ShortStatisticCard';
 import {
   getStatistic, elementsCount, getAllElements, countAnswersCalls,
 } from '../../actions/statistic';
-import { getBalance } from "../../actions/balance";
+import { getBalance } from '../../actions/balance';
+import { getProjects } from '../../actions/projects';
 import LineChart from '../LineChart';
 import BarChart from '../BarChart';
 import Dropdown from '../Dropdown';
@@ -18,21 +19,25 @@ import './_dashboard-container.scss';
 const DashboardContainer = (props) => {
   const [select, setSelect] = useState('all');
   const {
-    authentication, statistic, elementsCount: childrenCounts, getAllElements: getAllEl, countAnswersCalls: countAC, getBalance: balance,
+    authentication, projects, getProjects: getProj, getBalance: balance,
   } = props;
   useEffect(() => {
-    countAC(authentication.user.uid);
     balance(authentication.user.uid);
+    getProj(authentication.user.uid);
   }, []);
 
   const count = (prop, sel) => {
     let result = 0;
-    if (Object.keys(statistic).length > 0) {
+    if (Object.keys(projects).length > 0) {
       if (sel === 'all') {
-        result = Object.keys(statistic).map((item) => statistic[item][prop]).reduce((prev, curr) => prev + curr);
-      } else {
-        result = statistic[sel][prop];
-      }
+        result = Object.keys(projects).map((item) => {
+          if (Object.prototype.hasOwnProperty.call(projects[item], '_statistic')) {
+            return result = projects[item]._statistic[prop];
+          } return result = 0;
+        }).reduce((prev, curr) => prev + curr);
+      } else if (Object.prototype.hasOwnProperty.call(projects[sel], '_statistic')) {
+        result = projects[sel]._statistic[prop];
+      } else return 0;
     } else {
       result = 0;
     }
@@ -41,15 +46,21 @@ const DashboardContainer = (props) => {
 
 
   const conversion = (sel) => {
-    if (Object.keys(statistic).length > 0) {
-      return count('answers', sel) / count('calls', sel) * 100;
+    if (Object.keys(projects).length > 0) {
+      const result = count('answers', sel) / count('calls', sel) * 100;
+      if (result) {
+        return result;
+      } return 0;
     }
     return 0;
   };
 
   const cost = (callPrice, sel) => {
-    if (Object.keys(statistic).length > 0) {
-      return count('calls', sel) * callPrice / count('answers', sel);
+    if (Object.keys(projects).length > 0) {
+      const result = count('calls', sel) * callPrice / count('answers', sel);
+      if (result) {
+        return result;
+      } return 0;
     }
     return 0;
   };
@@ -63,38 +74,44 @@ const DashboardContainer = (props) => {
       data: [],
     };
     const ob = {};
-    if (Object.keys(statistic).length > 0) {
+    if (Object.keys(projects).length > 0) {
       if (sel === 'all') {
-        Object.keys(statistic).map((item) => Object.keys(statistic[item][`_time_${prop}`]).map((i) => {
-          if (ob[i]) {
-            ob[i] += statistic[item][`_time_${prop}`][i];
+        Object.keys(projects).map((item) => {
+          if (Object.prototype.hasOwnProperty.call(projects[item], '_statistic')) {
+            Object.keys(projects[item]._statistic[`_time_${prop}`]).map((i) => {
+              if (ob[i]) {
+                ob[i] += projects[item]._statistic[`_time_${prop}`][i];
+              } else {
+                ob[i] = projects[item]._statistic[`_time_${prop}`][i];
+              }
+            });
           } else {
-            ob[i] = statistic[item][`_time_${prop}`][i];
+            return ob;
           }
-        }));
+        });
 
         result.labels.push(Object.keys(ob));
         result.data.push(Object.keys(ob).map((i) => ob[i]));
-      } else {
-        result.labels.push(Object.keys(statistic[sel][`_time_${prop}`]));
-        result.data.push(Object.keys(statistic[sel][`_time_${prop}`]).map((item) => statistic[sel][`_time_${prop}`][item]));
+      } else if (Object.prototype.hasOwnProperty.call(projects[sel], '_statistic')) {
+        result.labels.push(Object.keys(projects[sel]._statistic[`_time_${prop}`]));
+        result.data.push(Object.keys(projects[sel]._statistic[`_time_${prop}`]).map((item) => projects[sel]._statistic[`_time_${prop}`][item]));
       }
     }
     return result;
   };
   return <>
- <div className="row justify-content-end mr-4 mt-4">
-  <div className="col ml-4"><h4>Статистика</h4></div>
+    <div className="row justify-content-end mr-4 mt-4">
+      <div className="col ml-4"><h4>Статистика</h4></div>
       <div className='block'>
         <Dropdown
-          statistic={statistic}
+          projects={projects}
           icons={faProjectDiagram}
           select={selectProject}
           button={faEllipsisH}
           header={{ name: 'Все проекты', icon: faListUl }}
           title="Статистика"
         />
-     </div>
+      </div>
     </div>
     <div className='row mt-2 mr-2 ml-2'>
       <ShortStatisticCard title="SHORT_STATISTIC_CARD_CALLS_TITLE" value={count('calls', select)} borderColor="border-left-primary" textColor="text-primary" icon={<FontAwesomeIcon icon={faPhone} size="2x" color="#dddfeb" />} />
@@ -115,7 +132,7 @@ DashboardContainer.propTypes = {
 
 
 const mapStateToProps = (state) => ({
-  statistic: state.statistic,
+  projects: state.projects,
   authentication: state.authentication,
 });
 
@@ -125,6 +142,7 @@ const mapDispatchToProps = {
   getAllElements,
   countAnswersCalls,
   getBalance,
+  getProjects,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(DashboardContainer);

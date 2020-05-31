@@ -1,0 +1,46 @@
+.btn:focus, .btn.focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+.btn-primary-new {
+  background-color: $main-color;
+  color:white;
+  border:1px solid;
+}
+
+.btn-primary-new:hover{
+  background-color: $main-color-hover;
+  color:white;
+  border-color:$main-color-hover;
+  border:1px solid;
+}
+
+.btn-primary-new.disabled {
+  opacity: 0.4;
+}
+
+.btn-outline-primary-new {
+  background-color: white;
+  border-color: $main-color;
+  color: $main-color;
+}
+.btn-outline-primary-new:hover {
+  background-color: $main-color-hover;
+  color:white;
+  border-color:$main-color-hover;
+  border:1px solid;
+}
+.button-image {
+  margin-right: 0.4rem;
+}
+
+.trash {
+  color:#dc3545;
+  border-color:#dc3545;
+}
+
+.trash:hover {
+  color:white;
+  background-color:#dc3545;
+}

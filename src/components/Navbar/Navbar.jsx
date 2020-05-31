@@ -27,7 +27,7 @@ const Navbar = (props) => {
   if (select === 'sign_out') {
     signOut();
   }
-  return <div className="row row-nav">
+  return <div className="row">
     <div className="col">
       <div className="navbar justify-content-end">
         <div className="coins mr-4">
