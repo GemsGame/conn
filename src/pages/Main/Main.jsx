@@ -10,6 +10,7 @@ import Navbar from '../../components/Navbar';
 import Dashboard from '../Dashboard/Dashboard';
 import Projects from '../Projects';
 import Records from '../Records';
+import Constructor from '../Constructor';
 
 
 const Main = () => <div className="container-fluid">
@@ -19,7 +20,7 @@ const Main = () => <div className="container-fluid">
                   ['Cтатистика', <FontAwesomeIcon icon={faChartLine} size="lg" color="white" />, '/dashboard'],
                   ['Проекты', <FontAwesomeIcon icon={faTasks} size="lg" color="white" />, '/dashboard/projects'],
                   ['Записи звонков', <FontAwesomeIcon icon={faServer} size="lg" color="white" />, '/dashboard/records'],
-                  ['Конструктор', <FontAwesomeIcon icon={faWrench} size="lg" color="white" />, '/'],
+                  ['Конструктор', <FontAwesomeIcon icon={faWrench} size="lg" color="white" />, '/dashboard/constructor'],
                   ['Баланс CONN', <FontAwesomeIcon icon={faCoins} size="lg" color="white" />, '/'],
                   ['Справка', <FontAwesomeIcon icon={faQuestionCircle} size="lg" color="white" />, '/'],
                 ]}
@@ -30,6 +31,7 @@ const Main = () => <div className="container-fluid">
                 <Route exact path="/dashboard" component={Dashboard} />
                 <Route path="/dashboard/projects" component={Projects} />
                 <Route path="/dashboard/records" component={Records} />
+                <Route path="/dashboard/constructor" component={Constructor} />
             </Switch>
             </div>
     </div>
