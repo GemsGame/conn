@@ -1,4 +1,5 @@
 import React from 'react';
+import WidgetType from '../../components/WidgetType';
 
 const Constructor = () => (
   <>
@@ -10,8 +11,11 @@ const Constructor = () => (
   
     </div>
   </div>
-  <div className='row mr-2 ml-2 mt-3 calls-box'>
-
+  <div className='row mr-2 ml-2 mt-3'>
+  <WidgetType/>
+  <WidgetType/>
+  <WidgetType/>
+  
  </div>
  </>
 );
