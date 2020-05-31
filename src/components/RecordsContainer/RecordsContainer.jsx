@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import Input from '../Input';
 import Search from '../Search';
-import CallListItem from '../CallListItem';
+import CallList from '../CallList/CallList';
 
 const RecordsContainer = props => {
     return (
@@ -15,8 +15,8 @@ const RecordsContainer = props => {
         
           </div>
         </div>
-        <div className='row mr-2 ml-2 mt-3'>
-       <CallListItem/>
+        <div className='row mr-2 ml-2 mt-3 calls-box'>
+       <CallList/>
        </div>
        </>
     );

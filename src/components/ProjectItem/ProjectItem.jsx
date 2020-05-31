@@ -71,7 +71,7 @@ const ProjectItem = ({ item, hash, uid }) => {
           <div className="row"></div>
           <div className="card-header backgound-white">
             <div className="row">
-              <div className="col"><h6>{projectName}</h6></div>
+              <div className="col project-header"><h6>{projectName}</h6></div>
               <Button className="btn mr-3 btn-sm trash" onClick={open('deleteProject')}> <i className="far fa-trash-alt"></i></Button>
             </div>
           </div>

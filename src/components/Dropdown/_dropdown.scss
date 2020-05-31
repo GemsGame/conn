@@ -1,9 +1,7 @@
 .dropdown-container__card {
   height: 100%;
-  border: 0;
-  border-radius: 0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border-radius: 10px;
+  border: 1px solid #00000017;
   background-color: white;
 }
 
@@ -27,12 +25,14 @@
 .dropdown-container__title {
   color: white;
   font-size: 16px;
-  padding: 1rem;
-  border-bottom: 3px solid #12e3ff;
+
   text-align: center;
   font-weight: 700;
-  background-color: #00d9f6
-  ;
+  background-color: $main-color;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding:5px 10px;
+  
 }
 
 .dropdown-list {
@@ -41,7 +41,7 @@
 
 .dropdown-list__item {
   font-size: 14px;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 .dropdown-list__item-name,
 .dropdown-list__image {

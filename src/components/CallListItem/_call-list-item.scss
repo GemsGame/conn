@@ -1,35 +1,25 @@
 .call-list-item {
- min-width: 200px;
- background-color: #00d9f6;
- 
- border: 0;
-    box-shadow: 0 1px 3px rgba(0, 217, 255, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  .call-list-item__wrapper {
-      display: flex;
-  
-    
-  }
-    
-.call-list-item__time{
-    padding:0.7rem 1rem;
-    font-size: 0.7rem;
-    width: 50%;
-    color:white;
+min-width: 200px;
+background-color: white;
+border-radius: 10px;
+padding:10px;
+margin:10px;
+.call-list-item__time {
+color: #02A0FC;
 }
 
-.call-list-item__download {
-    padding:0.7rem 1rem;
-    width: 50%;
-    display: flex;
-    justify-content: flex-end;
-    color:white;
+  .call-list-item__wrapper {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color:rgb(221, 223, 235);
+      padding: 4px;
+  }
+    
+
 }
-    .call-list-item__body {
-    padding:0.7rem 1rem;
-    background-color: #8df2ff;
-    .call-list-item__player {
-        font-size:0.7rem;
-    }
-    }
+
+.calls-box {
+    justify-content: space-between;
+    display: flex;
 }

@@ -63,7 +63,7 @@ const Navbar = (props) => {
               header={{ name: 'All projects', icon: faUserCircle }}
               title={email}
               select={selectProject}
-            />
+            ></Dropdown>
           </div>
         </div>
       </div>

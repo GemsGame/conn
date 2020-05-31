@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import './_dropdown.scss';
+
 
 class Dropdown extends React.Component {
     state = {
@@ -47,7 +47,7 @@ class Dropdown extends React.Component {
 
     render() {
         const {  
-            projects, select, buttonText,  buttonSize, list, button, title, icons, header, span } = this.props;
+            projects, select, buttonText, children,  buttonSize, list, button, title, icons, header, span } = this.props;
        
         let style = "hidden";
         if (this.state.visible) {
@@ -100,13 +100,14 @@ class Dropdown extends React.Component {
         return (
             <div className="dropdown-box">
                 <div className="dropdown-m">
-                    <div className="dropdown-m__button">
+                    <div className="dropdown-m__button"  onClick={this.openClose}>
                         <FontAwesomeIcon
                             icon={button}
                             id="button"
                             size={buttonSize}
-                            onClick={this.openClose}
+                           
                         />
+                   
                         {sp}
                     </div>
                 </div>
