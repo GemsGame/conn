@@ -8,14 +8,10 @@ const Constructor = () => (
       <h4>Конструктор</h4>
     </div>
     <div className="col-auto">
-  
     </div>
   </div>
   <div className='row mr-2 ml-2 mt-3'>
   <WidgetType/>
-  <WidgetType/>
-  <WidgetType/>
-  
  </div>
  </>
 );
