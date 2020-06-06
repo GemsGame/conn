@@ -1,0 +1,30 @@
+
+
+.widget-color {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border:2px solid rgba(0, 0, 0, 0.05);
+
+  &.blue {
+    background-color: $main-color;
+  }
+  &.blue-dark{
+    background-color: $second-color;
+  }
+  &.green{
+    background-color: $success-color;
+  }
+  &.orange{
+    background-color: $warning-color;
+  }
+  &.red{
+    background-color: $danger-color;
+  }
+
+  &:hover {
+    border:2px solid rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+  }
+}
+

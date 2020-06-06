@@ -19,7 +19,7 @@ $windowElementsColor: rgba(0, 0, 0, 0.2);
   align-items: center;
   border-radius: 10px;
   margin:5px;
-  border: 1px solid $windowElementsColor;
+  border:2px solid rgba(0, 0, 0, 0.05);
   cursor: pointer;
 
   &.window__type1 {
@@ -33,7 +33,11 @@ $windowElementsColor: rgba(0, 0, 0, 0.2);
     height: 50px;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.1);
-    }
+  }
+
+  &:hover {
+    border:2px solid rgba(0, 0, 0, 0.2);
+  }
 }
 
 .window__row{

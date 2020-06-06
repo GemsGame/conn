@@ -1,5 +1,6 @@
 import React from 'react';
 import WidgetType from '../../components/WidgetType';
+import WidgetColors from '../../components/WidgetColors';
 
 const Constructor = () => (
   <>
@@ -11,6 +12,7 @@ const Constructor = () => (
     </div>
   </div>
   <div className='row mr-2 ml-2 mt-3'>
+    <WidgetColors/>
   <WidgetType/>
  </div>
  </>
