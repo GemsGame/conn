@@ -15,9 +15,20 @@ const WidgetView = ({ widgetType = 'type1', bColor = 'white', tColor = 'black', 
     padding: '20px',
     border: '2px solid rgba(0, 0, 0, 0.05)',
   };
+
+
+
   let content;
   if (widgetType === 'type1') {
-    content = <div style={widgetStyle}>111</div>;
+    content = <div style={widgetStyle}>
+      
+      <div className="user-img">
+        <img src="/images/gift.png"></img>
+      </div>
+      <div className="window-text">
+       <p className="window-text__width">Мой текст Мой текст Мой текст Мой текстМой текст Мой текст Мой текстМой текст Мой текст Мой текст Мой текст Мой текст Мой текст</p>
+      </div>
+    </div>;
   }
   if (widgetType === 'type2') {
     content = <div style={widgetStyle}>2</div>;
