@@ -1,6 +1,8 @@
 import React from 'react';
 import WidgetType from '../../components/WidgetType';
 import WidgetColors from '../../components/WidgetColors';
+import './_constructor.scss';
+import WidgetView from '../../components/WidgetView';
 
 const Constructor = () => (
   <>
@@ -11,9 +13,14 @@ const Constructor = () => (
     <div className="col-auto">
     </div>
   </div>
-  <div className='row mr-2 ml-2 mt-3'>
-    <WidgetColors/>
+  <div className='row mr-2 ml-1 mt-3'>
+  <div className="w100-col">
+   <WidgetView/>
+  </div>
+  <div className="w-col">
   <WidgetType/>
+  <WidgetColors/>
+  </div>
  </div>
  </>
 );

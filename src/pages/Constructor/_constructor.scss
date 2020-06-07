@@ -1,0 +1,13 @@
+.w-col {
+  max-width: 326px;
+  justify-content: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.w100-col {
+  display: flex;
+  flex-grow: 1;
+  flex-basis:auto;
+}
