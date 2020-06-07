@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './_widget-view.scss';
 
-const WidgetView = ({ widgetType = 'type1', bColor = 'white', mWidth = '700px', mHeight = '300px'}) => {
+const WidgetView = ({ widgetType = 'type1', bColor = 'white', tColor = 'black', mWidth = '700px', mHeight = '300px'}) => {
   const widgetStyle = {
     maxWidth: mWidth,
     minHeight: mHeight,
     height: '100%',
     width: '100%',
+    color: tColor,
     backgroundColor: bColor,
     borderRadius: '10px',
     margin: '10px',
