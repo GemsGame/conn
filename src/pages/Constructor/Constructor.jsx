@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import WidgetType from '../../components/WidgetType';
 import WidgetColors from '../../components/WidgetColors';
 import './_constructor.scss';
 import WidgetView from '../../components/WidgetView';
 
-const Constructor = () => (
-  <>
-  <div className='row mr-2 mt-4 ml-2 justify-content-end'>
+const Constructor = () => {
+  const [widget, setWidget] = useState({});
+  const changeWidget = (type) => {
+    setWidget({ ...widget, ...type });
+  };
+  return <> <div className='row mr-2 mt-4 ml-2 justify-content-end'>
   <div className="col">
       <h4>Конструктор</h4>
     </div>
@@ -15,13 +18,13 @@ const Constructor = () => (
   </div>
   <div className='row mr-2 ml-1 mt-3'>
   <div className="w100-col">
-   <WidgetView/>
+   <WidgetView {...widget}/>
   </div>
   <div className="w-col">
-  <WidgetType/>
-  <WidgetColors/>
+  <WidgetType changeWidget={changeWidget}/>
+  <WidgetColors changeWidget={changeWidget}/>
   </div>
  </div>
- </>
-);
+ </>;
+};
 export default Constructor;

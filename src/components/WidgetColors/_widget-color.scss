@@ -21,6 +21,9 @@
   &.red{
     background-color: $danger-color;
   }
+  &.black{
+    background-color: #000000;
+  }
 
   &:hover {
     border:2px solid rgba(0, 0, 0, 0.5);
